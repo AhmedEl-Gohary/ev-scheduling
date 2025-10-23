@@ -9,8 +9,8 @@ Then open: http://localhost:5000
 from flask import Flask, render_template_string, jsonify, request
 from flask_cors import CORS
 import secrets
-from src.algorithms.sa import simulated_annealing
-from src.algorithms.greedy import greedy_schedule
+from algorithms.sa import simulated_annealing
+from algorithms.greedy import greedy_schedule
 from eval import *
 
 app = Flask(__name__)

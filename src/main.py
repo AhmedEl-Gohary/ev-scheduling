@@ -12,7 +12,7 @@ Usage:
 
 import argparse
 from utilities import *
-from src.algorithms.greedy import greedy_schedule
+from algorithms.greedy import greedy_schedule
 
 def main():
     parser = argparse.ArgumentParser()
