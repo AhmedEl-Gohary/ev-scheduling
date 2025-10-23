@@ -11,7 +11,7 @@ from flask_cors import CORS
 import secrets
 from algorithms.sa import simulated_annealing
 from algorithms.greedy import greedy_schedule
-from eval import *
+from src.eval import *
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)

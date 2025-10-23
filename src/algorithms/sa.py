@@ -2,18 +2,14 @@
 import math
 import random
 import time
-from typing import Tuple, Dict, Any, Optional, List
-import numpy as np
 
-from schedule_generator import make_neighbor_from_XB
-from eval import compute_total_tardiness, compute_peak_power, check_spot_capacity, check_station_power, objective_fn
-
-
+from src.schedule_generator import make_neighbor_from_XB
+from src.eval import *
 
 
 def simulated_annealing(X0: np.ndarray, B0: np.ndarray, params: Dict[str, Any],
                         T0: float = 1.0, Tf: float = 1e-3,
-                        imax: int = 200, nT: int = 50,
+                        imax: int = 30, nT: int = 5,
                         rng_seed: Optional[int] = 42,
                         ) -> Tuple[np.ndarray, np.ndarray, list[Any]]:
     rng = random.Random(rng_seed)
