@@ -6,246 +6,18 @@ Run with: python app.py
 Then open: http://localhost:5000
 """
 
-from flask import Flask, render_template_string, jsonify, request, session
+from flask import Flask, render_template_string, jsonify, request
 from flask_cors import CORS
-import json
-import numpy as np
-import math
-import random
-import copy
-from typing import Dict, List, Any, Optional, Tuple
 import secrets
+from src.algorithms.sa import simulated_annealing
+from src.algorithms.greedy import greedy_schedule
+from eval import *
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
 CORS(app)
 
-# Store algorithm states in memory (in production, use Redis or database)
 algorithm_states = {}
-
-
-# ============================================================================
-# EVALUATION FUNCTIONS (from eval.py)
-# ============================================================================
-
-def compute_completion_times_from_X(X: np.ndarray) -> List[Optional[int]]:
-    J = X.shape[0]
-    CT = [None] * J
-    for j in range(J):
-        occ_t = X[j].sum(axis=(0, 1))
-        charged_slots = np.where(occ_t > 0)[0]
-        if charged_slots.size > 0:
-            CT[j] = int(charged_slots.max())
-    return CT
-
-
-def compute_total_tardiness(X: np.ndarray, params: Dict[str, Any]) -> float:
-    CT = compute_completion_times_from_X(X)
-    tardiness_sum = 0.0
-    evs = params["evs"]
-    for j, ev in enumerate(evs):
-        d_j = ev["departure_slot"]
-        if CT[j] is None:
-            T = params["time_slots"]
-            tard = max(0, T - d_j)
-            tardiness_sum += tard
-        else:
-            tard = max(0, CT[j] - d_j)
-            tardiness_sum += float(tard)
-    return tardiness_sum
-
-
-def compute_total_power_profile(B: np.ndarray, level_powers: List[float]) -> np.ndarray:
-    ev_power = np.tensordot(B, level_powers, axes=([1], [0]))
-    total_power = ev_power.sum(axis=0)
-    return total_power
-
-
-def compute_peak_power(B: np.ndarray, level_powers: List[float]) -> float:
-    total_power = compute_total_power_profile(B, level_powers)
-    return float(total_power.max()) if total_power.size > 0 else 0.0
-
-
-def objective_fn(X: np.ndarray, B: np.ndarray, params: Dict[str, Any],
-                 w_tardiness: float = 1.0, w_peak: float = 1.0) -> float:
-    f1 = compute_total_tardiness(X, params)
-    f2 = compute_peak_power(B, params["level_powers"])
-    return w_tardiness * f1 + w_peak * f2
-
-
-# ============================================================================
-# GREEDY SCHEDULER (from main.py)
-# ============================================================================
-
-def greedy_schedule(params: Dict[str, Any]) -> Tuple[np.ndarray, np.ndarray]:
-    T = params["time_slots"]
-    L = len(params["spots_per_line"])
-    S_i = params["spots_per_line"]
-    Smax = max(S_i)
-    K = len(params["level_powers"])
-    J = len(params["evs"])
-
-    X = np.zeros((J, L, Smax, T), dtype=int)
-    B = np.zeros((J, K, T), dtype=int)
-    station_power = np.zeros(T, dtype=float)
-
-    ev_order = sorted(range(J), key=lambda j: params["evs"][j]["arrival_slot"])
-
-    for j in ev_order:
-        ev = params["evs"][j]
-        arrival = ev["arrival_slot"]
-        Ereq = ev["energy_required"]
-        assigned = False
-
-        for ell in range(K):
-            r_l = params["level_powers"][ell]
-            p_jl = math.ceil(Ereq / (r_l * params["delta_t"]))
-            if p_jl <= 0:
-                p_jl = 1
-
-            for start in range(arrival, T - p_jl + 1):
-                end = start + p_jl
-                can_place_power = True
-                for t in range(start, end):
-                    if station_power[t] + r_l > (params.get("P_max") or 1e12):
-                        can_place_power = False
-                        break
-                if not can_place_power:
-                    continue
-
-                spot_found = False
-                for i in range(L):
-                    for s in range(S_i[i]):
-                        occ_any = X[:, i, s, start:end].sum()
-                        if occ_any == 0:
-                            X[j, i, s, start:end] = 1
-                            B[j, ell, start:end] = 1
-                            station_power[start:end] += r_l
-                            spot_found = True
-                            break
-                    if spot_found:
-                        break
-                if spot_found:
-                    assigned = True
-                    break
-            if assigned:
-                break
-    return X, B
-
-
-# ============================================================================
-# SIMPLE SA WITH STATE CAPTURE
-# ============================================================================
-
-def make_simple_neighbor(X_cur, B_cur, params, rng):
-    """Simple neighbor generation: reassign one random EV"""
-    X_new = X_cur.copy()
-    B_new = B_cur.copy()
-
-    J = len(params["evs"])
-    j = rng.randint(0, J - 1)
-
-    # Clear current assignment
-    X_new[j, :, :, :] = 0
-    B_new[j, :, :] = 0
-
-    # Try to assign randomly
-    ev = params["evs"][j]
-    arrival = ev["arrival_slot"]
-    T = params["time_slots"]
-    L = len(params["spots_per_line"])
-    S_i = params["spots_per_line"]
-    K = len(params["level_powers"])
-    Ereq = ev["energy_required"]
-
-    ell = rng.randint(0, K - 1)
-    r_l = params["level_powers"][ell]
-    p_jl = max(1, math.ceil(Ereq / (r_l * params["delta_t"])))
-
-    if arrival + p_jl <= T:
-        start = rng.randint(arrival, max(arrival, T - p_jl))
-        end = start + p_jl
-        i = rng.randint(0, L - 1)
-        s = rng.randint(0, S_i[i] - 1)
-
-        # Check if spot is free
-        if X_new[:, i, s, start:end].sum() == 0:
-            X_new[j, i, s, start:end] = 1
-            B_new[j, ell, start:end] = 1
-
-    return X_new, B_new
-
-
-def simulated_annealing_with_states(X0, B0, params, T0=10.0, Tf=1e-3,
-                                    imax=50, nT=30, w_tardiness=1.0, w_peak=1.0,
-                                    rng_seed=42):
-    """SA that captures state at each temperature step"""
-    rng = random.Random(rng_seed)
-
-    X_cur, B_cur = X0.copy(), B0.copy()
-    f_cur = objective_fn(X_cur, B_cur, params, w_tardiness, w_peak)
-    X_best, B_best = X_cur.copy(), B_cur.copy()
-    f_best = f_cur
-
-    alpha = (Tf / T0) ** (1.0 / max(1, imax - 1)) if imax > 1 else 0.9
-    states = []
-
-    Tcur = T0
-
-    # Save initial state
-    states.append({
-        'iteration': 0,
-        'temperature': Tcur,
-        'X': X_cur.tolist(),
-        'B': B_cur.tolist(),
-        'objective': f_cur,
-        'best_objective': f_best,
-        'tardiness': compute_total_tardiness(X_cur, params),
-        'peak_power': compute_peak_power(B_cur, params["level_powers"])
-    })
-
-    for i in range(imax):
-        if Tcur <= Tf:
-            break
-
-        for k in range(nT):
-            X_new, B_new = make_simple_neighbor(X_cur, B_cur, params, rng)
-            f_new = objective_fn(X_new, B_new, params, w_tardiness, w_peak)
-            delta = f_new - f_cur
-
-            accept = False
-            if delta < 0:
-                accept = True
-            else:
-                try:
-                    p = math.exp(-delta / max(Tcur, 1e-300))
-                except OverflowError:
-                    p = 0.0
-                if rng.random() < p:
-                    accept = True
-
-            if accept:
-                X_cur, B_cur, f_cur = X_new.copy(), B_new.copy(), f_new
-                if f_cur < f_best:
-                    f_best = f_cur
-                    X_best, B_best = X_cur.copy(), B_cur.copy()
-
-        # Save state after each temperature
-        states.append({
-            'iteration': i + 1,
-            'temperature': Tcur,
-            'X': X_cur.tolist(),
-            'B': B_cur.tolist(),
-            'objective': f_cur,
-            'best_objective': f_best,
-            'tardiness': compute_total_tardiness(X_cur, params),
-            'peak_power': compute_peak_power(B_cur, params["level_powers"])
-        })
-
-        Tcur *= alpha
-
-    return X_best, B_best, states
-
 
 # ============================================================================
 # FLASK ROUTES
@@ -287,14 +59,12 @@ def start_algorithm():
     X0, B0 = greedy_schedule(params)
 
     # Run SA with state capture
-    X_best, B_best, states = simulated_annealing_with_states(
+    X_best, B_best, states = simulated_annealing(
         X0, B0, params,
         T0=params.get('T0', 10.0),
         Tf=params.get('Tf', 0.001),
         imax=params.get('imax', 50),
         nT=params.get('nT', 30),
-        w_tardiness=params.get('w_tardiness', 1.0),
-        w_peak=params.get('w_peak', 0.5),
         rng_seed=params.get('seed', 42)
     )
 
