@@ -1,0 +1,39 @@
+{
+  "time_slots": 20,
+  "delta_t": 1.0,
+  "lines": { "L1": 3, "L2": 2 },
+  "charging_levels": { "1": 3.0, "2": 7.0, "3": 11.0 },
+  "P_max": 40.0,
+  "evs": [
+    {
+      "id": "EV1",
+      "arrival_slot": 0,
+      "departure_slot": 7,
+      "energy_required": 21.0
+    },
+    {
+      "id": "EV2",
+      "arrival_slot": 1,
+      "departure_slot": 9,
+      "energy_required": 28.0
+    },
+    {
+      "id": "EV3",
+      "arrival_slot": 3,
+      "departure_slot": 12,
+      "energy_required": 35.0
+    },
+    {
+      "id": "EV4",
+      "arrival_slot": 5,
+      "departure_slot": 15,
+      "energy_required": 42.0
+    },
+    {
+      "id": "EV5",
+      "arrival_slot": 8,
+      "departure_slot": 19,
+      "energy_required": 33.0
+    }
+  ]
+}

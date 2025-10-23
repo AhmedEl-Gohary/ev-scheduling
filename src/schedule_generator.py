@@ -175,7 +175,7 @@ def random_neighbor_assignments(assignments: List[Dict[str,Any]], params: Dict[s
                                 'move_spot', 'swap_spots'])
         j = rng.randrange(J)
         assigned_j = new_a[j].get('assigned', False)
-        print("Move Type:", move_type)
+        # print("Move Type:", move_type)
         # SHIFT
         if move_type == 'shift':
             if not assigned_j:

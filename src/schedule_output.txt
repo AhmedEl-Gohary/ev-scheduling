@@ -3,20 +3,20 @@
 
 -- Line 1 (spots = 3) --
 Time        1        2        3        4        5        6        7        8        9        10       11       12       13       14       15       16       17       18       19       20       21       22       23       24   
-Spot 1    E1:L1    E1:L1    E1:L1    E1:L1    E1:L1    E1:L1      .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .    
-Spot 2      .      E2:L1    E2:L1    E2:L1    E2:L1    E2:L1    E2:L1    E2:L1    E2:L1      .        .        .        .        .        .        .        .        .        .        .        .        .        .        .    
+Spot 1      .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .    
+Spot 2      .        .        .      E1:L1    E1:L1    E1:L1    E1:L1    E1:L1    E1:L1      .        .        .        .        .        .        .        .        .        .        .        .        .        .        .    
 Spot 3      .        .      E3:L1    E3:L1    E3:L1    E3:L1    E3:L1    E3:L1    E3:L1    E3:L1    E3:L1    E3:L1      .        .        .        .        .        .        .        .        .        .        .        .    
 
 -- Line 2 (spots = 3) --
 Time        1        2        3        4        5        6        7        8        9        10       11       12       13       14       15       16       17       18       19       20       21       22       23       24   
-Spot 1      .        .        .        .        .      E4:L2    E4:L2    E4:L2    E4:L2    E4:L2    E4:L2    E4:L2    E4:L2    E4:L2      .        .        .        .        .        .        .        .        .        .    
-Spot 2      .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .    
-Spot 3      .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .    
+Spot 1      .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .        .    
+Spot 2      .        .        .      E2:L1    E2:L1    E2:L1    E2:L1    E2:L1    E2:L1    E2:L1    E2:L1      .        .        .        .        .        .        .        .        .        .        .        .        .    
+Spot 3      .        .        .        .        .        .        .        .        .        .        .        .      E4:L2    E4:L2    E4:L2    E4:L2    E4:L2    E4:L2    E4:L2    E4:L2    E4:L2      .        .        .    
 === End schedule ===
 
 ===== Evaluation Results =====
 Total tardiness (f1) [in slots]: 0.000
-Peak power (f2) [kW]: 16.000
+Peak power (f2) [kW]: 9.000
 
 Constraint checks:
  - spot_capacity: OK
