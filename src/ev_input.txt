@@ -1,0 +1,2049 @@
+{
+  "metadata": {
+    "time_slots": 24,
+    "max_lines": 3,
+    "max_spots": 3,
+    "P_max": 50.0,
+    "delta_t": 1.0,
+    "level_powers": [
+      3.0,
+      7.0,
+      11.0
+    ]
+  },
+  "kpis": {
+    "total_tardiness_slots": 0.0,
+    "peak_power_kW": 21.0
+  },
+  "ev_data": [
+    {
+      "id": "EV1",
+      "arrival_slot": 0,
+      "departure_slot": 8,
+      "energy_required": 18.0,
+      "arrival_slot_0based": 0,
+      "departure_slot_0based": 8
+    },
+    {
+      "id": "EV2",
+      "arrival_slot": 1,
+      "departure_slot": 10,
+      "energy_required": 24.0,
+      "arrival_slot_0based": 1,
+      "departure_slot_0based": 10
+    },
+    {
+      "id": "EV3",
+      "arrival_slot": 2,
+      "departure_slot": 14,
+      "energy_required": 30.0,
+      "arrival_slot_0based": 2,
+      "departure_slot_0based": 14
+    },
+    {
+      "id": "EV4",
+      "arrival_slot": 5,
+      "departure_slot": 20,
+      "energy_required": 60.0,
+      "arrival_slot_0based": 5,
+      "departure_slot_0based": 20
+    }
+  ],
+  "total_power_profile_kW": [
+    3.0, 7.0, 7.0, 7.0, 7.0, 14.0, 14.0, 14.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 0.0, 0.0, 0.0, 0.0
+  ],
+  "schedule_by_slot": [
+    {
+      "slot": 1,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E1:L1",
+              "ev_id": 1,
+              "level": 1,
+              "power_kW": 3.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 2,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E2:L2",
+              "ev_id": 2,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 3,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E2:L2",
+              "ev_id": 2,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 2,
+              "status": "E3:L2",
+              "ev_id": 3,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 4,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E2:L2",
+              "ev_id": 2,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 2,
+              "status": "E3:L2",
+              "ev_id": 3,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 5,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E2:L2",
+              "ev_id": 2,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 2,
+              "status": "E3:L2",
+              "ev_id": 3,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 6,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E2:L2",
+              "ev_id": 2,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 2,
+              "status": "E3:L2",
+              "ev_id": 3,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 3,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 7,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E2:L2",
+              "ev_id": 2,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 2,
+              "status": "E3:L2",
+              "ev_id": 3,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 3,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 8,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E2:L2",
+              "ev_id": 2,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 2,
+              "status": "E3:L2",
+              "ev_id": 3,
+              "level": 2,
+              "power_kW": 7.0
+            },
+            {
+              "spot_id": 3,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 9,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E3:L3",
+              "ev_id": 3,
+              "level": 3,
+              "power_kW": 11.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 10,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E3:L3",
+              "ev_id": 3,
+              "level": 3,
+              "power_kW": 11.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 11,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E3:L3",
+              "ev_id": 3,
+              "level": 3,
+              "power_kW": 11.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 12,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E3:L3",
+              "ev_id": 3,
+              "level": 3,
+              "power_kW": 11.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 13,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E3:L3",
+              "ev_id": 3,
+              "level": 3,
+              "power_kW": 11.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 14,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E3:L3",
+              "ev_id": 3,
+              "level": 3,
+              "power_kW": 11.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 15,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 16,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 17,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 18,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 19,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 20,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "E4:L1",
+              "ev_id": 4,
+              "level": 1,
+              "power_kW": 3.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 21,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 22,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 23,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slot": 24,
+      "lines": [
+        {
+          "line_id": 1,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 2,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        },
+        {
+          "line_id": 3,
+          "spots": [
+            {
+              "spot_id": 1,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 2,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            },
+            {
+              "spot_id": 3,
+              "status": "Free",
+              "ev_id": null,
+              "level": null,
+              "power_kW": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
