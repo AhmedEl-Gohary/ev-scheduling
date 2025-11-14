@@ -55,12 +55,9 @@ def start_algorithm():
     if "delta_t" not in params:
         params["delta_t"] = 1.0
 
-    # Generate initial schedule
-    X0, B0 = greedy_schedule(params)
-
     # Run SA with state capture
     X_best, B_best, states = simulated_annealing(
-        X0, B0, params,
+        params,
         T0=params.get('T0', 10.0),
         Tf=params.get('Tf', 0.001),
         imax=params.get('imax', 50),

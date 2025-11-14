@@ -13,7 +13,6 @@ def simulated_annealing(params: Dict[str, Any],
                         rng_seed: Optional[int] = 42,
                         ) -> Tuple[np.ndarray, np.ndarray, list[Any]]:
     rng = random.Random(rng_seed)
-    np_rng = np.random.RandomState(rng_seed)
     states = []
 
     # initial
@@ -110,4 +109,3 @@ def simulated_annealing(params: Dict[str, Any],
         Tcur *= alpha
 
     return X_best, B_best, states
-
