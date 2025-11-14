@@ -12,9 +12,8 @@ import secrets
 import json
 import threading
 import queue
-from algorithms.ga import genetic_algorithm
-from algorithms.greedy import greedy_schedule
-from eval import *
+from src.algorithms.ga import genetic_algorithm
+from src.eval import *
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
