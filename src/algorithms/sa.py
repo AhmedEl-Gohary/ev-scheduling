@@ -5,9 +5,9 @@ import time
 
 from src.schedule_generator import make_neighbor_from_XB
 from src.eval import *
+from src.algorithms.greedy import greedy_schedule
 
-
-def simulated_annealing(X0: np.ndarray, B0: np.ndarray, params: Dict[str, Any],
+def simulated_annealing(params: Dict[str, Any],
                         T0: float = 1.0, Tf: float = 1e-3,
                         imax: int = 30, nT: int = 5,
                         rng_seed: Optional[int] = 42,
@@ -17,7 +17,7 @@ def simulated_annealing(X0: np.ndarray, B0: np.ndarray, params: Dict[str, Any],
     states = []
 
     # initial
-    X_cur, B_cur = X0.copy(), B0.copy()
+    X_cur, B_cur = greedy_schedule(params)
     f_cur = objective_fn(X_cur, B_cur, params)
     X_best, B_best = X_cur.copy(), B_cur.copy()
     f_best = f_cur

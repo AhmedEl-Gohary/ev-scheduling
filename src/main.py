@@ -15,6 +15,7 @@ import argparse
 from utilities import *
 from algorithms.greedy import greedy_schedule
 from algorithms.sa import simulated_annealing
+from algorithms.ga import genetic_algorithm
 
 
 def compare_algorithms(params):
@@ -41,7 +42,7 @@ def compare_algorithms(params):
 
     # Run simulated annealing starting from greedy solution
     X_sa, B_sa, sa_states = simulated_annealing(
-        X_greedy, B_greedy, params,
+        params,
         T0=10.0,
         Tf=1e-3,
         imax=100,  # number of temperature reductions
@@ -97,11 +98,11 @@ def compare_algorithms(params):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", "-i", default="inputs/t1.json", help="Path to JSON input parameters.")
+    parser.add_argument("--input", "-i", default="inputs/t3.json", help="Path to JSON input parameters.")
     parser.add_argument("--demo", action="store_true", help="Run demo greedy scheduler and evaluate it.")
     parser.add_argument("--compare", action="store_true", help="Compare greedy and SA algorithms.")
     args = parser.parse_args()
-    args.compare = True
+    args.demo = True
     params = load_params(args.input)
     print("Loaded parameters from", args.input)
 
@@ -115,17 +116,26 @@ def main():
         print("SA solution exported to schedule_output.txt and schedule.csv")
 
     elif args.demo:
-        print("Running demo greedy scheduler (very simple heuristic)...")
-        X, B = greedy_schedule(params)
-        f1 = compute_total_tardiness(X, params)
-        f2 = compute_peak_power(B, params["level_powers"])
-        valid_spot, v_spot = check_spot_capacity(X, params)
-        valid_power, v_power = check_station_power(B, params["level_powers"], params.get("P_max"))
-        violations = {"spot_capacity": v_spot, "station_power": v_power}
-        pretty_print_evaluation(f1, f2, violations)
+        print("Running demo ga scheduler (very simple heuristic)...")
+        X, B, states = genetic_algorithm(params)
         pretty_print_schedule(X, B, params)
-        export_output_to_txt(X, B, params)
-        export_schedule_to_csv(X, B, params)
+        X_sa, B_sa, sa_states = simulated_annealing(
+            params,
+            T0=10.0,
+            Tf=1e-3,
+            imax=100,  # number of temperature reductions
+            nT=50,  # iterations per temperature
+            rng_seed=42
+        )
+
+        f1_sa = compute_total_tardiness(X_sa, params)
+        f2_sa = compute_peak_power(B_sa, params["level_powers"])
+        valid_spot_sa, v_spot_sa = check_spot_capacity(X_sa, params)
+        valid_power_sa, v_power_sa = check_station_power(B_sa, params["level_powers"], params.get("P_max"))
+        violations_sa = {"spot_capacity": v_spot_sa, "station_power": v_power_sa}
+
+        print("\nSimulated Annealing Solution Evaluation:")
+        pretty_print_evaluation(f1_sa, f2_sa, violations_sa)
     else:
         print("Demo not requested. This script exposes evaluation functions for schedules.")
         print("To test evaluation with a generated schedule, run with --demo")

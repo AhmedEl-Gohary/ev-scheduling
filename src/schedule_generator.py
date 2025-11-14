@@ -159,7 +159,6 @@ def random_neighbor_assignments(assignments: List[Dict[str,Any]], params: Dict[s
       - level_uniform
       - move_spot
       - swap_spots
-      - reassign (attempt to move EV to a different start/spot/level pattern WITHOUT leaving it unassigned)
     The function never sets an EV to unassigned; candidates containing any unassigned EV are rejected.
     """
     rng = random.Random()
