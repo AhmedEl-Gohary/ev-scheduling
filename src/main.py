@@ -12,10 +12,10 @@ Usage:
 """
 
 import argparse
-from utilities import *
-from algorithms.greedy import greedy_schedule
-from algorithms.sa import simulated_annealing
-from algorithms.ga import genetic_algorithm
+from src.utilities import *
+from src.algorithms.greedy import greedy_schedule
+from src.algorithms.sa import simulated_annealing
+from src.algorithms.ga import genetic_algorithm
 
 
 def compare_algorithms(params):

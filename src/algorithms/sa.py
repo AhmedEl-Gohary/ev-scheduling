@@ -3,9 +3,10 @@ import math
 import random
 import time
 
-from schedule_generator import make_neighbor_from_XB
-from eval import *
-from algorithms.greedy import greedy_schedule
+
+from src.schedule_generator import make_neighbor_from_XB
+from src.eval import *
+from src.algorithms.greedy import greedy_schedule
 
 def simulated_annealing(params: Dict[str, Any],
                         T0: float = 1.0, Tf: float = 1e-3,

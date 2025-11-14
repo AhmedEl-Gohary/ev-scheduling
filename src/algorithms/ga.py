@@ -5,13 +5,13 @@ import time
 from typing import List, Dict, Any, Tuple, Optional, Callable
 import numpy as np
 
-from schedule_generator import (
+from src.schedule_generator import (
     extract_assignments_from_XB,
     build_XB_from_assignments,
     make_neighbor_from_XB
 )
-from eval import objective_fn, compute_total_tardiness, compute_peak_power
-from algorithms.greedy import greedy_schedule
+from src.eval import objective_fn, compute_total_tardiness, compute_peak_power
+from src.algorithms.greedy import greedy_schedule
 
 
 def initialize_population(params: Dict[str, Any],

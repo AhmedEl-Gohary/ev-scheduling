@@ -1,4 +1,4 @@
-from utilities import *
+from src.utilities import *
 from math import ceil
 
 def greedy_schedule(params: Dict[str, Any]) -> Tuple[np.ndarray, np.ndarray]:

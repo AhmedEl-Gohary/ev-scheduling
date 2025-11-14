@@ -1,7 +1,7 @@
 import json
 import csv
 import sys
-from eval import *
+from src.eval import *
 
 # ---------------------------
 # IO / runner
