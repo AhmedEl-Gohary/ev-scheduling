@@ -11,7 +11,7 @@ from flask_cors import CORS
 import secrets
 from algorithms.sa import simulated_annealing
 from algorithms.greedy import greedy_schedule
-from src.eval import *
+from eval import *
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
@@ -750,7 +750,7 @@ HTML_TEMPLATE = '''
                         </div>
                         <div class="form-group">
                             <label>Weight Peak</label>
-                            <input type="number" id="wPeak" value="0.5" step="0.1">
+                            <input type="number" id="wPeak" value="1.0" step="0.1">
                         </div>
                     </div>
                 </div>
