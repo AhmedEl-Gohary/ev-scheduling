@@ -16,6 +16,7 @@ from src.utilities import *
 from src.algorithms.greedy import greedy_schedule
 from src.algorithms.sa import simulated_annealing
 from src.algorithms.ga import genetic_algorithm
+from src.algorithms.aco import ant_colony_optimization
 
 
 def compare_algorithms(params):
@@ -117,7 +118,7 @@ def main():
 
     elif args.demo:
         print("Running demo ga scheduler (very simple heuristic)...")
-        X, B, states = genetic_algorithm(params)
+        X, B, states = ant_colony_optimization(params)
         pretty_print_schedule(X, B, params)
         X_sa, B_sa, sa_states = simulated_annealing(
             params,
