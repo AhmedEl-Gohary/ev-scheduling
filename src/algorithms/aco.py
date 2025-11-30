@@ -7,7 +7,6 @@ from typing import Dict, Any, Tuple, List, Optional, Callable
 from src.eval import objective_fn, compute_total_tardiness, compute_peak_power
 from src.utilities import load_params
 
-
 class AntColonyOptimizer:
     def __init__(self, params: Dict[str, Any],
                  n_ants: int = 20,

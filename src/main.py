@@ -117,9 +117,17 @@ def main():
         print("SA solution exported to schedule_output.txt and schedule.csv")
 
     elif args.demo:
-        print("Running demo ga scheduler (very simple heuristic)...")
         X, B, states = ant_colony_optimization(params)
         pretty_print_schedule(X, B, params)
+        f1_aco = compute_total_tardiness(X, params)
+        f2_aco = compute_peak_power(B, params["level_powers"])
+        valid_spot_aco, v_spot_aco = check_spot_capacity(X, params)
+        valid_power_aco, v_power_aco = check_station_power(B, params["level_powers"], params.get("P_max"))
+        violations_aco = {"spot_capacity": v_spot_aco, "station_power": v_power_aco}
+
+        print("\nAnc Colony Optimization Solution Evaluation:")
+        pretty_print_evaluation(f1_aco, f2_aco, violations_aco)
+
         X_sa, B_sa, sa_states = simulated_annealing(
             params,
             T0=10.0,
